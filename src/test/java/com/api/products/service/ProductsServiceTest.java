@@ -63,8 +63,8 @@ class ProductsServiceTest {
     @Test
     void getProductsId() {
         // Arrange
-        Products expectedMovie = new Products();
-        when(productsRepository.findById(1)).thenReturn(Optional.of(expectedMovie));
+        Products expectedProduct = new Products();
+        when(productsRepository.findById(1)).thenReturn(Optional.of(expectedProduct));
 
         // Act
         ResponseEntity<ApiResponse<Products>> responseEntity = productsService.getProductsId(1);
@@ -73,7 +73,7 @@ class ProductsServiceTest {
         assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
         assertEquals("success", responseEntity.getBody().getStatus());
         assertEquals("Producto encontrado", responseEntity.getBody().getMessage());
-        assertEquals(expectedMovie, responseEntity.getBody().getData());
+        assertEquals(expectedProduct, responseEntity.getBody().getData());
     }
 
     @Test
