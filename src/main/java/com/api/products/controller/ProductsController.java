@@ -62,7 +62,7 @@ public class ProductsController {
             ApiResponse<List<Products>> response = new ApiResponse<>(null, "error", "No se encontraron productos con los filtros proporcionados");
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
         } else {
-            // Si se encontraron productos, devuelve un ResponseEntity con los libros y un mensaje de éxito
+            // Si se encontraron productos, devuelve un ResponseEntity con los productos y un mensaje de éxito
             ApiResponse<List<Products>> response = new ApiResponse<>(products, "success", "Productos obtenidos satisfactoriamente");
             return ResponseEntity.ok().body(response);
         }
